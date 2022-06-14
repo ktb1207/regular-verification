@@ -1,0 +1,26 @@
+{
+  "name": "regular-verification",
+  "version": "1.0.0",
+  "description": "A js regular expression verification tool",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ktb1207/regular-verification.git"
+  },
+  "keywords": [
+    "regular",
+    "regular-verification"
+  ],
+  "author": "ktb1207",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ktb1207/regular-verification/issues"
+  },
+  "homepage": "https://github.com/ktb1207/regular-verification#README"
+}
