@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "A js regular expression verification tool",
   "main": "dist/index.js",
+  "module": "dist/index.mjs",
   "files": [
     "dist"
   ],
   "scripts": {
+    "build": "rollup -c",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -22,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/ktb1207/regular-verification/issues"
   },
-  "homepage": "https://github.com/ktb1207/regular-verification#README"
+  "homepage": "https://github.com/ktb1207/regular-verification#README",
+  "devDependencies": {
+    "rollup": "^2.75.6"
+  }
 }
