@@ -1,3 +1,3 @@
-import { isTel } from './packages/baseRegular';
+import { isTel, onlySmallLetter, onlyBigLetter, onlyNumberLetter } from './packages/baseRegular';
 
-export { isTel };
+export { isTel, onlySmallLetter, onlyBigLetter, onlyNumberLetter };
