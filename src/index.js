@@ -1,3 +1,12 @@
-import { isTel, onlySmallLetter, onlyBigLetter, onlyNumberLetter } from './packages/baseRegular';
+export {
+  isTel,
+  isFixedPhone,
+  isIdentityCode,
+  isPostalCode,
+  isDateCode,
+  isUserAccountCode,
+  isWeakPassword,
+  isStrongPassword,
+} from './packages/baseRegular';
 
-export { isTel, onlySmallLetter, onlyBigLetter, onlyNumberLetter };
+export { onlySmallLetter, onlyBigLetter, onlyNumberLetter, limitNumberOneToThousand, onlyChineseCode } from './packages/onlyRegular';

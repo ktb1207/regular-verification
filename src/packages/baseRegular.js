@@ -2,7 +2,7 @@
  * @Author: kongtb
  * @Date: 2022-06-19 22:45:58
  * @Last Modified by: kongtb
- * @Last Modified time: 2022-06-20 23:23:57
+ * @Last Modified time: 2022-06-22 22:53:58
  */
 
 /**
@@ -24,53 +24,85 @@ export function isTel(num) {
 }
 
 /**
- *
- * @description 仅允许小写字母
- * @export
- * @param {*} str
- * @return {boolean}
- */
-export function onlySmallLetter(str) {
-  // ^ 限制只能以小写字母开头
-  // [a-z] 小写字母 a-z
-  // [a-z]+ 小写字母1次或多次
-  // [a-z]+$小写字母1次或多次并且限制小写字母结尾
-  const smallLetterReg = /^[a-z]+$/g;
-  return typeof str === 'string' ? smallLetterReg.test(str) : false;
-}
-
-/**
- *
- * @description 仅允许大写字母
- * @export
- * @param {*} str
- * @return {*}
- */
-export function onlyBigLetter(str) {
-  const bigLetterReg = /^[A-Z]+$/g;
-  return typeof str === 'string' ? bigLetterReg.test(str) : false;
-}
-
-/**
- *
- * @description 仅允许数字，并且非0开头
- * @export
- * @param {*} str
- * @return {*}
- */
-export function onlyNumberLetter(str) {
-  const numberLeterReg = /^[1-9]\d*$/g;
-  return typeof str === 'string' ? numberLeterReg.test(str) : false;
-}
-
-/**
- * @description 限制数字1-999
+ * @description 固定电话 010-68865412 0371-98654123 4008809456
  *
  * @export
  * @param {*} str
  * @return {*}
  */
-export function limitNumberOneToThousand(str) {
-  const onToThousandReg = /^[1-9]\d{0,1}\d?$/g;
-  return typeof str === 'string' ? onToThousandReg.test(str) : false;
+export function isFixedPhone(str) {
+  const fixedPhoneReg = /(^\d{3,4}-\d{8}$)|(^400\d{7}$)/g;
+  return typeof str === 'string' ? fixedPhoneReg.test(str) : false;
+}
+
+/**
+ * @description 身份证号 15或18位，18位末尾很可能包含x
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isIdentityCode(str) {
+  const identityReg = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/g;
+  return typeof str === 'string' ? identityReg.test(str) : false;
+}
+
+/**
+ * @description 国内邮政编码
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isPostalCode(str) {
+  const postalReg = /^[1-9]\d{5}$/g;
+  return typeof str === 'string' ? postalReg.test(str) : false;
+}
+
+/**
+ * @description 日期 年-月-日格式
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isDateCode(str) {
+  const dateReg = /^\d{4}-(([0-1]?\d{1})|(3[0-1]))-(([0-2]?\d{1})|(3[0-1]))$/g;
+  return typeof str === 'string' ? dateReg.test(str) : false;
+}
+
+/**
+ * @description 合法账号 字母开头，数字字母下划线长度6-18
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isUserAccountCode(str) {
+  const accountReg = /^[a-zA-Z][a-zA-Z0-9_]{5,17}$/g;
+  return typeof str === 'string' ? accountReg.test(str) : false;
+}
+
+/**
+ * @description 弱密码 字母开头，数字字母下划线组合6-18
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isWeakPassword(str) {
+  const weakReg = /^[a-zA-Z]\w{5,17}$/g;
+  return typeof str === 'string' ? weakReg.test(str) : false;
+}
+
+/**
+ * @description 强密码 必须包含大写字母，小写字母，数字，特殊符号，长度8位以上
+ *
+ * @export
+ * @param {*} str
+ * @return {*}
+ */
+export function isStrongPassword(str) {
+  const strongReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`~!@#\$%\^&\*\(\)\-_\+=]).{8,}$/g;
+  return typeof str === 'string' ? strongReg.test(str) : false;
 }

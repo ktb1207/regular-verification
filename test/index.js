@@ -20,6 +20,5 @@ telDom.innerText = `${testTel}是否是一个手机号：${isTel(testTel)}`;
 // /(ab)|(cd)/g; ab或cd为整体，出现一次即可
 
 // const myReg = /^[a-zA-Z][a-zA-Z]*\d+[~!@#\$%\^&\*\(\)_\+-=<>\?,\.\/\|]+{6,18}$/g;
-const myReg = /ABC/g;
-
-console.log(myReg.test('aA12@3'));
+const myReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[`~!@#\$%\^&\*\(\)\-_\+=]).{8,}$/g;
+console.log(myReg.test('123456aA@'));
