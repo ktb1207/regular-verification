@@ -1,6 +1,6 @@
 {
   "name": "regular-verification",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A js regular expression verification library",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

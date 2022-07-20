@@ -69,3 +69,7 @@ console.log(isTel(testStr)); // true
 > onlyChineseCode(str)
 
 仅允许中文
+
+> onlyContainTwoDecimal
+
+数字必须包含两位小数

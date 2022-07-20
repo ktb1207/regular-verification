@@ -9,4 +9,4 @@ export {
   isStrongPassword,
 } from './packages/baseRegular';
 
-export { onlySmallLetter, onlyBigLetter, onlyNumberLetter, limitNumberOneToThousand, onlyChineseCode } from './packages/onlyRegular';
+export { onlySmallLetter, onlyBigLetter, onlyNumberLetter, limitNumberOneToThousand, onlyChineseCode, onlyContainTwoDecimal} from './packages/onlyRegular';

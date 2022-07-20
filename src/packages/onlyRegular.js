@@ -2,7 +2,7 @@
  *
  * @description 仅允许小写字母
  * @export
- * @param {*} str
+ * @param {string} str
  * @return {boolean}
  */
 export function onlySmallLetter(str) {
@@ -18,8 +18,8 @@ export function onlySmallLetter(str) {
  *
  * @description 仅允许大写字母
  * @export
- * @param {*} str
- * @return {*}
+ * @param {string} str
+ * @return {boolean}
  */
 export function onlyBigLetter(str) {
   const bigLetterReg = /^[A-Z]+$/g;
@@ -27,11 +27,23 @@ export function onlyBigLetter(str) {
 }
 
 /**
+ * @description 是否中文
+ *
+ * @export
+ * @param {string} str
+ * @return {boolean}
+ */
+export function onlyChineseCode(str) {
+  const chineseReg = /^[\u4e00-\u9fa5]$/g;
+  return typeof str === 'string' ? chineseReg.test(str) : false;
+}
+
+/**
  *
  * @description 仅允许数字，并且非0开头
  * @export
- * @param {*} str
- * @return {*}
+ * @param {string} str
+ * @return {boolean}
  */
 export function onlyNumberLetter(str) {
   const numberLeterReg = /^[1-9]\d*$/g;
@@ -42,21 +54,23 @@ export function onlyNumberLetter(str) {
  * @description 限制数字1-999
  *
  * @export
- * @param {*} str
- * @return {*}
+ * @param {string} str
+ * @return {boolean}
  */
 export function limitNumberOneToThousand(str) {
   const onToThousandReg = /^[1-9]\d{0,1}\d?$/g;
   return typeof str === 'string' ? onToThousandReg.test(str) : false;
 }
+
 /**
- * @description 是否中文
  *
+ * @description 包含两位小数
  * @export
- * @param {*} str
- * @return {*}
+ * @param {string} str
+ * @return {boolean} 
  */
-export function onlyChineseCode(str) {
-  const chineseReg = /^[\u4e00-\u9fa5]$/g;
-  return typeof str === 'string' ? chineseReg.test(str) : false;
+export function onlyContainTwoDecimal(str){
+  const twoDecimalReg = /^(\-)?\d+(\.\d{2})$/;
+  return typeof str === 'string' ? twoDecimalReg.test(str) : false;
 }
+
